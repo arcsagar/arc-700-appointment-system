@@ -2,12 +2,25 @@ import React from "react";
 import reactLogo from "../logos/react-logo.png";
 import NavLinkButton from "./NavLinkButton";
 import { headerLinkType } from "./commonTypes";
+import Button from "./Button";
+import { useDispatch } from "react-redux";
+import { removeUserData } from "../store/userReducer/userReducer";
+import { useNavigate } from "react-router-dom";
 
 const Header: React.FC<{ headerLink: headerLinkType[] }> = ({ headerLink }) => {
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const logOut = () => {
+    dispatch(removeUserData(0))
+    navigate('/')
+  }
+
   const headerLinkNavs = headerLink.map((link: headerLinkType) => {
     return (
-      <li>
+      <li  key={link.btName}>
         <NavLinkButton
+         
           btPath={link.btPath}
           btName={link.btName}
           btType={link.btType}
@@ -26,10 +39,15 @@ const Header: React.FC<{ headerLink: headerLinkType[] }> = ({ headerLink }) => {
         />
         <h1 className="text-xl font-bold">Header</h1>
       </div>
+      {/* flex-col  items-center space-y-4*/}
       <nav className="mt-4 md:mt-0">
-        <ul className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
+        <ul className="flex  md:space-y-0 md:space-x-4 md:flex-row flex-col  items-center space-y-4">
           {headerLinkNavs}
+          <li>
+            <Button btName="logout" btFun={logOut} btType="bt-error" />
+          </li>
         </ul>
+
       </nav>
     </header>
   );

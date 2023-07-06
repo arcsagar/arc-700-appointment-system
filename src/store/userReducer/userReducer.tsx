@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-type actionType = {
+export type actionType = {
     payload: {
         userData: any
     }
@@ -14,10 +14,13 @@ const userReducer = createSlice({
         addUserData: (state: any, action: actionType) => {
             console.log(action)
             state.userData = action.payload.userData
-        }
+        },
+        removeUserData : (state: any, action) => {
+            state.userData = userState.userData
+        } 
     }
 });
 
-export const {addUserData} = userReducer.actions;
+export const {addUserData, removeUserData} = userReducer.actions;
 
 export default userReducer;

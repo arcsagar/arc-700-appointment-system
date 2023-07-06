@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { loginUser } from '../../store/userReducer/userAction';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { setLoading } from '../../store/authStore/authReducer';
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -22,8 +23,8 @@ const Login: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    dispatch(loginUser({email: 'doctor1@h.com', password: "Pass@123"}, navigate))
+    dispatch(setLoading({loading:true}))
+    dispatch(loginUser({email, password}, navigate))
     // TODO: Implement login logic
   };
 
