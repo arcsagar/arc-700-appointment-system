@@ -12,7 +12,7 @@ const userReducer = createSlice({
     initialState: userState,
     reducers: {
         addUserData: (state: any, action: actionType) => {
-            console.log(action)
+            // console.log(action)
             state.userData = action.payload.userData
         },
         removeUserData : (state: any, action) => {

@@ -14,7 +14,7 @@ const FullCalendarComponent = () => {
  
   const {doctorEvents } = useSelector((state:any) => state.doctor)
 
-  console.log('doctorEvents',doctorEvents)
+  // console.log('doctorEvents',doctorEvents)
   const dispatch:any = useDispatch()
   const handleDateSelect = (selectInfo: DateSelectArg) => {
     let title = prompt('Please enter a new title for your event')

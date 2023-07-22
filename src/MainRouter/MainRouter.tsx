@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainComponent from "../MainComponent/MainComponent";
-import DoctorComponent from "../components/Doctor/DoctorComponent";
-import UserComponent from "../components/UserComponent/UserComponent";
+
+
 import AdminComponent from "../components/AdminComponent/AdminComponent";
 import DoctorProfile from "../components/Doctor/DoctorProfile/DoctorProfile";
 import DoctorSetAppointment from "../components/Doctor/DoctorSetAppointment/DoctorSetAppointment";
@@ -10,7 +10,12 @@ import UserProfile from "../components/UserComponent/UserProfile/UserProfile";
 import UserBookAppointment from "../components/UserComponent/UserBookAppointment/UserBookAppointment";
 import UserAppointments from "../components/UserComponent/UserAppointments/UserAppointments";
 import Login from "../components/Auth/Login";
+import PaypalComp from "../common/PaypalComp";
+import { Suspense, lazy } from "react";
 
+const LazyUserComponent = lazy(() => import('../components/UserComponent/UserComponent'));
+
+const LazyDoctorComponent = lazy(() => import("../components/Doctor/DoctorComponent"));
 const mainRouter = createBrowserRouter([
     {
       path: "/",
@@ -22,7 +27,7 @@ const mainRouter = createBrowserRouter([
   },
     {
       path: '/user',
-      element: <UserComponent/>,
+      element: <Suspense><LazyUserComponent /></Suspense>,
       children: [
         {
           path: '/user',
@@ -35,12 +40,16 @@ const mainRouter = createBrowserRouter([
         {
           path: '/user/appointments',
           element: <UserAppointments/>
+        },
+        {
+          path: '/user/payout',
+          element: <PaypalComp />
         }
       ]
     },
     {
       path: '/doctor',
-      element: <DoctorComponent/>,
+      element: <Suspense> <LazyDoctorComponent /> </Suspense>,
       children: [
         { path: '/doctor',
           element: <DoctorProfile/>

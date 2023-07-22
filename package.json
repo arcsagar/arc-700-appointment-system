@@ -8,6 +8,7 @@
     "@fullcalendar/interaction": "^6.1.8",
     "@fullcalendar/react": "^6.1.8",
     "@fullcalendar/timegrid": "^6.1.8",
+    "@paypal/react-paypal-js": "^8.1.0",
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",

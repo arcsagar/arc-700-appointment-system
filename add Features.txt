@@ -1,0 +1,48 @@
+
+
+Profile = Edit 
+
+-------------
+user
+
+book apppointment = book apppointment timout  = > {
+
+
+setTimeout > book Appointment page 
+clearInterval
+setTimoutAgain 
+
+cancel button click func 
+
+}
+
+cancel appointment 
+complete = join 
+
+
+
+
+soctket.io (>  waiting in server => waiting room => c2 joins the waiting room => active room )
+c1  => c2 call =>  waiting in server => waiting room => c2 joins the waiting room => active room 
+c2  recive 
+
+patient document \
+
+prescription custom  and diagnosis HL7
+
+
+doctor = dignosis Form custom form 
+
+
+doctor event = {
+ day   to and from 
+allDay false
+start time and end time
+appointment type,
+
+---defuct --
+appointmentSpanTime
+doctor can delete pertical session 
+gap 
+
+}

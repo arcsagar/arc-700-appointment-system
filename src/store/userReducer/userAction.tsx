@@ -1,4 +1,5 @@
 import { setError, setLoading } from "../authStore/authReducer";
+import { loginKey, storeLocal } from "../commonFun";
 import { addUserData } from "./userReducer";
 
 export const loginUser = (loginUserData: any, navigate: any) => {
@@ -12,12 +13,13 @@ export const loginUser = (loginUserData: any, navigate: any) => {
           "Content-type": "application/json",
         },
       });
-      console.log("resObj", resObj);
+      // console.log("resObj", resObj);
 
       const resBody = await resObj.json();
-      console.log("resBody", resBody);
       dispatch(setLoading({loading:false}))
       if (resBody.status === 200) {
+          console.log("resBody", resBody.token);
+          storeLocal(loginKey,resBody.token)
         dispatch(addUserData({ userData: resBody.userData }));
         navigate(`/${resBody.userData.type}`);
       } else {

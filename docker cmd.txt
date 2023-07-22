@@ -1,0 +1,21 @@
+docker cmd
+
+docker build -f Dockerfile.dev -t hospitalreact . 
+
+docker run -it --name hospitalreact hospitalreact
+
+docker run -it --name hospitalreact1 -p 3002:3000 hospitalreact
+
+docker run -it -d --name hospitalreact2 -p 3002:3000 hospitalreact
+
+
+
+//ngnix 
+
+docker build -t hospitalreact .
+
+docker run --name hopitalContainer -d -p 3002:80  hospitalreact
+
+docker-compose up -d
+
+docker-compose down

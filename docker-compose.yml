@@ -1,0 +1,7 @@
+version: '1'
+services:
+  web:
+    container_name: hospitalContainer
+    build: .
+    ports:
+      - 3002:80

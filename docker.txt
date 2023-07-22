@@ -1,0 +1,13 @@
+docker = minimum software ready to deploy framework 
+
+hosting 
+1) oS - linux, windows
+2) requiured software - python , nodejs etc
+3) Project files 
+4) build procces 
+
+
+docker =  image OS with required software 
+prject host 
+
+

@@ -5,16 +5,16 @@ import Button from "./Button";
 interface Props {
   appData: any[];
   tHead: string[];
-  bookApp: () => void;
+  buttonOptionArr?: any[]
 }
 
-const AppTable: React.FC<Props> = ({ tHead, appData, bookApp }) => {
+const AppTable: React.FC<Props> = ({ tHead, appData, buttonOptionArr }) => {
   const tHeadContent = tHead.map((thValue: string) => {
     return (
       <th
         key={thValue}
         scope="col"
-        className="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+        className=" py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
       >
         {thValue}
       </th>
@@ -27,8 +27,8 @@ const AppTable: React.FC<Props> = ({ tHead, appData, bookApp }) => {
     return (
       <tr key={trValue.id}>
         {tHead.map((thValue: string) => {
-          const eventST = 1577556000000;
-          const eventTZ = "America/New_York";
+          // const eventST = 1577556000000;
+          // const eventTZ = "America/New_York";
           // const getEventTimeBasedOnTZ = moment.utc(eventST).tz(eventTZ);
           const getEventTimeBasedOnTZ = momentTz.tz(
             trValue[thValue],
@@ -37,19 +37,22 @@ const AppTable: React.FC<Props> = ({ tHead, appData, bookApp }) => {
           let tdRow = <td></td>;
           if (thValue === "start" || thValue === "end") {
             tdRow = (
-              <td key={thValue} className="px-3 py-3 whitespace-nowrap">
+              <td key={thValue} className="px-2 py-3 whitespace-nowrap">
                 {getEventTimeBasedOnTZ.format("MM-DD-YYYY HH:MM")}
               </td>
             );
           } else if (thValue == "options") {
+            const optionButton = buttonOptionArr?.map((btData:any) => {
+              return (<Button btName={btData.label} btFun={() => btData?.btFun(trValue)} />)
+            })
             tdRow = (
-              <td key={thValue} className="px-3 py-3 whitespace-nowrap">
-                <Button btName="book" btFun={bookApp} />
+              <td key={thValue} className="px-2 py-3 whitespace-nowrap">
+                  {optionButton}
               </td>
             );
           } else {
             tdRow = (
-              <td key={thValue} className="px-3 py-3 whitespace-nowrap">
+              <td key={thValue} className="px-2 py-3 whitespace-nowrap">
                 {String(trValue[thValue]) !== "undefined"
                   ? String(trValue[thValue])
                   : "-"}

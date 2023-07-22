@@ -12,7 +12,7 @@ const doctorReducer = createSlice({
     initialState: doctorState,
     reducers: {
         addEvents: (state: any, action: actionType) => {
-            console.log(action)
+            // console.log(action)
             state.doctorEvents = action.payload.newEvents
         },
     }

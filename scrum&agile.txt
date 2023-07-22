@@ -1,0 +1,98 @@
+scrum  = CPO , SM  , PO  
+
+sprint  = life cylcle of current work  = 1 week - 4 week . golden spot 2week    = 1 week 7 = 
+
+
+Calculator = sub , add , div, mul = feature 
+
+1)sub feature 
+
+
+
+story = make UI 
+discription 
+    story = 1 story (UI )
+    - there should two inputs 
+    - there should be two click button '-' / '=' 
+    - user should be able to enter number 
+    - if user click on - or = somthing happen 
+
+
+1 point = 1 day 
+
+pointing system = 1,2,3,5, 8 means may take more than a week ,11,13
+
+13 1 sprint 
+5/3
+
+point aduj
+
+
+
+
+tickiting system  = module based work 
+
+point 13: 
+
+module = login 
+
+features 
+1)form login
+2) backend 
+3) API 
+4) API database
+5) Call API from front ENd
+6) store data in front 
+7) User Auth
+
+
+
+feature 1 _ 8
+
+features 
+1)form login
+2) backend 
+3) API 
+4) API database
+
+feature 2 _5
+
+5) Call API from front ENd
+6) store data in front 
+7) User Auth
+
+
+
+PO = ticket/ feature = feature description 
+
+
+
+
+1-13
+1) how much time it will take
+2) What is the risk
+
+sprint 2week 
+
+1-3 days for 1-3 point = normal
+3-5-8 = 3-5 days and severity mid-high  = sprint 
+
+break 
+3-8
+11-13
+
+team 4-8 = 2week 
+team 8-13 = 2week per dev 
+
+45HR / -week 
+9hr /week 
+ roji 60$  9HR =  540$  *5 = 
+ 3000$ = cmp 
+ 5% = total amt a candidate can make
+
+
+work doen 60% is not enogh 
+
+hr done 100% = 60%\
+
+per dev = 5pooint in sprint 
